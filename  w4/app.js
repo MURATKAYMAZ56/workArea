@@ -1,5 +1,5 @@
 
-/*p1-2
+//p1-2
 let books = ["missing_presumed",
     "the_great_alone",
     "fifty_fifty",
@@ -9,26 +9,26 @@ let books = ["missing_presumed",
     "lilac_girls",
     "the_girl_before_a_novel",
     "the_woman_in_the_window",
-    "the_hazel_wood"]
-console.log(books);
-*/
+    "the_hazel_wood"];
 
 
-/*p3
 
-function generating() {
 
-    let ul = document.createElement("ul");
-    document.body.appendChild(ul);
+//         //p3
 
-    for (let i in books) {
-        let li = document.createElement("li");
-        ul.appendChild(li);
-        li.textContent += books[i];
-    }
-}
-generating();
-*/
+// function generating() {
+
+//     let ul = document.createElement("ul");
+//     document.body.appendChild(ul);
+
+//     for (let i in books) {
+//         let li = document.createElement("li");
+//         ul.appendChild(li);
+//         li.textContent += books[i];
+//     }
+// }
+// generating();
+
 
 
 //p4
@@ -84,24 +84,74 @@ let bookDetails = {
         "author": "Melissa Albert"
     }
 
-}
-console.log(bookDetails);
+};
 
+
+
+
+//p5
+// function render() {
+//     let ul = document.createElement("ul");
+//     for (let i in bookDetails) {
+//         
+//         let book = books[i];
+//         let bookDetail = bookDetails[i];
+//         let title = bookDetail.title;
+//         let language = bookDetail.language;
+//         let author = bookDetail.author;
+
+//         let li = document.createElement("li");
+
+//         let elementTitle = document.createElement("h3");
+//         elementTitle.innerHTML = title;
+
+//         let elementLanguage = document.createElement("span");
+//         elementLanguage.innerHTML = language;
+
+//         let elementAuthor = document.createElement("p");
+//         elementAuthor.innerHTML = author;
+
+
+//         elementTitle.appendChild(elementLanguage);
+//         li.appendChild(elementTitle);
+//         li.appendChild(elementAuthor);
+//         ul.appendChild(li);
+//     }
+//     document.body.appendChild(ul);
+// }
+//P6-7
+let bookImages = {
+    "missing_presumed": "img/missing_presumed.jpg",
+    "the_great_alone": "img/the_great_alone.jpg",
+    "fifty_fifty": "img/fifty_fifty.jpg",
+    "dark_matter": "img/dark_matter.jpg",
+    "the_winter_people": "img/the_winter_people.jpg",
+    "obama_an_intimate_portrait": "img/obama_an_intimate_portrait.jpg",
+    "lilac_girls": "img/lilac_girls.jpg",
+    "the_girl_before_a_novel": "img/the_girl_before_a_novel.jpg",
+    "the_woman_in_the_window": "img/the_woman_in_the_window.jpg",
+    "the_hazel_wood": "img/the_hazel_wood.jpg"
+};
+//p6-7
 function render() {
     let ul = document.createElement("ul");
     for (let i in bookDetails) {
-        ;
-        let book = books[i];
+        let book = bookDetails[i];
         let bookDetail = bookDetails[i];
         let title = bookDetail.title;
         let language = bookDetail.language;
         let author = bookDetail.author;
 
+
         let li = document.createElement("li");
+        li.setAttribute("id", book);
+
         let elementTitle = document.createElement("h3");
         elementTitle.innerHTML = title;
+
         let elementLanguage = document.createElement("span");
         elementLanguage.innerHTML = language;
+
         let elementAuthor = document.createElement("p");
         elementAuthor.innerHTML = author;
 
@@ -110,6 +160,10 @@ function render() {
         li.appendChild(elementTitle);
         li.appendChild(elementAuthor);
         ul.appendChild(li);
+
+
     }
+
     document.body.appendChild(ul);
+
 }
