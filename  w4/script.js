@@ -14,20 +14,26 @@ let books = ["missing_presumed",
 
 
 
-//         //p3
+//p3
 
 // function generating() {
 
 //     let ul = document.createElement("ul");
-//     document.body.appendChild(ul);
 
-//     for (let i in books) {
+
+//     for (var i in books) {
+
+//         let book = books[i];
+
 //         let li = document.createElement("li");
+
+//         li.innerHTML = book;
 //         ul.appendChild(li);
-//         li.textContent += books[i];
 //     }
+
+//     document.body.appendChild(ul);
 // }
-// generating();
+
 
 
 
@@ -92,10 +98,10 @@ let bookDetails = {
 //p5
 // function render() {
 //     let ul = document.createElement("ul");
-//     for (let i in bookDetails) {
+//     for (let i in books) {
 //         
 //         let book = books[i];
-//         let bookDetail = bookDetails[i];
+//         let bookDetail = bookDetails[book];
 //         let title = bookDetail.title;
 //         let language = bookDetail.language;
 //         let author = bookDetail.author;
@@ -113,13 +119,16 @@ let bookDetails = {
 
 
 //         elementTitle.appendChild(elementLanguage);
+
 //         li.appendChild(elementTitle);
 //         li.appendChild(elementAuthor);
 //         ul.appendChild(li);
 //     }
 //     document.body.appendChild(ul);
 // }
-//P6-7
+
+
+//P7
 let bookImages = {
     "missing_presumed": "img/missing_presumed.jpg",
     "the_great_alone": "img/the_great_alone.jpg",
@@ -135,9 +144,11 @@ let bookImages = {
 //p6-7
 function render() {
     let ul = document.createElement("ul");
-    for (let i in bookDetails) {
-        let book = bookDetails[i];
-        let bookDetail = bookDetails[i];
+    for (let i in books) {
+
+        let book = books[i];
+
+        let bookDetail = bookDetails[book];
         let title = bookDetail.title;
         let language = bookDetail.language;
         let author = bookDetail.author;
@@ -157,8 +168,10 @@ function render() {
 
 
         elementTitle.appendChild(elementLanguage);
+
         li.appendChild(elementTitle);
         li.appendChild(elementAuthor);
+
         ul.appendChild(li);
 
 
@@ -167,3 +180,26 @@ function render() {
     document.body.appendChild(ul);
 
 }
+
+function renderImages() {
+
+    var bookImagesKeys = Object.keys(bookImages); // get key/field of bookImages array as array
+
+    for (var i in bookImagesKeys) { // loop over bookImagesKeys array
+
+        let bookImagesKey = bookImagesKeys[i]; // get bookImagesKey by index
+
+        let li = document.getElementById(bookImagesKey); // get "li" element by bookImagesKey id attribute
+
+        let img = document.createElement("img"); // create element with "img" tag @ DOM
+        img.src = bookImages[bookImagesKey]; // set source of image element as bookImage
+
+        li.insertBefore(img, li.firstChild); // add prepend element to "li" tag
+
+    }
+
+}
+
+render();
+
+renderImages();
