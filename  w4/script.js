@@ -170,6 +170,7 @@ function render() {
         elementTitle.appendChild(elementLanguage);
 
         li.appendChild(elementTitle);
+
         li.appendChild(elementAuthor);
 
         ul.appendChild(li);
@@ -183,18 +184,18 @@ function render() {
 
 function renderImages() {
 
-    var bookImagesKeys = Object.keys(bookImages); // get key/field of bookImages array as array
+    var bookImagesKeys = Object.keys(bookImages);
 
-    for (var i in bookImagesKeys) { // loop over bookImagesKeys array
+    for (var i in bookImagesKeys) {
 
-        let bookImagesKey = bookImagesKeys[i]; // get bookImagesKey by index
+        let bookImagesKey = bookImagesKeys[i];
 
-        let li = document.getElementById(bookImagesKey); // get "li" element by bookImagesKey id attribute
+        let li = document.getElementById(bookImagesKey);
 
-        let img = document.createElement("img"); // create element with "img" tag @ DOM
-        img.src = bookImages[bookImagesKey]; // set source of image element as bookImage
+        let img = document.createElement("img");
+        img.src = bookImages[bookImagesKey];
 
-        li.insertBefore(img, li.firstChild); // add prepend element to "li" tag
+        li.insertBefore(img, li.firstChild);
 
     }
 
