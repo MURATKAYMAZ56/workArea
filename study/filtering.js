@@ -22,7 +22,7 @@ console.log(dogs);
 */
 
 
-//doing by FILTER
+//doing by FILTER. filter is a higher function it goes throuh the array it throws the abject away 
 var dogs = animals.filter(function (animals) {
     return animals.species === "dog"
 }
