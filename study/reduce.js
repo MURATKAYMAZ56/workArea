@@ -1,3 +1,7 @@
+
+
+
+
 var orders = [
     { amount: 205 },
     { amount: 300 },
@@ -5,9 +9,6 @@ var orders = [
     { amount: 50 },
     { amount: 700 },
 ]
-
-
-
 /*
 var totalAmount = 0;
 for (i in orders) {
@@ -16,6 +17,7 @@ for (i in orders) {
 
 
 */
+// 0 rrepresents that at the beggining  sum=0
 
 var totalAmount = orders.reduce(function (sum, order) {
     return sum + order.amount
