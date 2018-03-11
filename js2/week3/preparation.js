@@ -17,6 +17,7 @@ var addTo = function () {
 };
 console.log(addTo());
 
+
 /*
 var addTo = function (passed) {
     var add = function (innner) {

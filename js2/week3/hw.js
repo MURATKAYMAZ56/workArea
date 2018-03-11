@@ -32,8 +32,24 @@ var first = function (start, end, threeCallback, fiveCallback) {
     var arr = [];
     for (i = start; i <= end; i++) {
         arr.push(i);
-        console.log(arr);
+       
     };
+    arr.forEach(function (divisible) { 
+        
+        if (divisible % 3 == 0) { 
+
+            return threeCallback(divisible);
+        
+        } else if (divisible % 5 == 0) {
+            
+            return fiveCallback(divisible);
+
+        } else if (divisible % 3 == 0 & divisible % 5 == 0) {
+
+            return threeCallback(divisible); fiveCallback(divisible);
+            
+        }
+    })
     // for (let i in arr) { 
     //     if (i % 3 === 0) {
     //         return threeCallback(start, end);
