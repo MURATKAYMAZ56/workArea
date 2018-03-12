@@ -1,6 +1,14 @@
 
 
+//p0
+/*
+function learningSetTimeOut() {
+    console.log("Hi, I have waited for you 10 sec:(")
 
+}
+setTimeout(learningSetTimeOut, 10000);
+
+*/
 /*
 //p1
 
@@ -48,45 +56,10 @@ console.log(addThree(1));
 console.log(addFour(1));
 */
 
-
-//p2
-var arr = [];
-var first = function (start, end, threeCallback, fiveCallback) {
-
-    for (i = start; i <= end; i++) {
-        arr.push(i);
-
-    };
-
-    arr.forEach(function (divisible) {
-
-        if (divisible % 3 === 0) {
-
-            return threeCallback(divisible);
-
-        } else if (divisible % 5 === 0) {
-
-            return fiveCallback(divisible);
-
-        } else if (divisible % 3 === 0 & divisible % 5 === 0) {
-
-            threeCallback(divisible);
-            return fiveCallback(divisible);
-
-        }
-    });
-    return arr;
-
-};
-console.log(first(5, 10));
-
-
-    // for (let i in arr) {
-    //     if (i % 3 === 0) {
-    //         return threeCallback(start, end);
-    //     } else if (i % 5 == 0) {
-    //         return fiveCallback(start, end);
-    //     } else if (i % 3 === 0 & i % 5 === 0) {
-    //         return threeCallback(start, end); fiveCallback(start,end);
-    //      };
-    // };
+function function1(arg1) {
+    console.log("I have called function2 as argument  :" + arg1);
+}
+function function2() {
+    return ("This is a function:)");
+}
+function1(function2());
