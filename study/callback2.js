@@ -28,4 +28,4 @@ var filtered = filter(list, callback);
 console.log(filtered);
 
 
-//Function(){ };
+
