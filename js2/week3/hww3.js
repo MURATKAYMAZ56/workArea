@@ -7,7 +7,7 @@ function learningSetTimeOut() {
 }
 setTimeout(learningSetTimeOut, 4000);
 
-
+/////////////////////////////////////////////////////////////////
 
 
 //p1
@@ -21,7 +21,7 @@ function1(function2());
 
 
 
-
+//////////////////////////////////////////////////////////////////
 
 //p2
 var arr = [];
@@ -57,6 +57,17 @@ var first = function (start, end, threeCallback, fiveCallback) {
 };
 first(2, 15, threeCallback, fiveCallback);
 
+///////////////////////////////////////////////////////////////
+//p6
+var arr = [[1, 2], [3, 4], [5, 6]];
+for (let i in arr) {
+    for (let j in arr) {
+        console.log(arr[i][j]);
+    }
+};
+
+
+/////////////////////////////////////////////////////////////////
 //p7
 let x = 9;
 //with the function below; changing the argument inside the function
