@@ -1,37 +1,39 @@
-
-var arr = [];
-
-function threeCallback(element) {
-
-    console.log(element + "  is divisible by 3");
+/*
+let x = function () {
+    console.log("I am called from inside a function")
 };
+let y = function (callback) {
+    console.log('do smthng')
+    callback();
 
-function fiveCallback(element) {
-    console.log(element + "  is divisible by 5")
-};
-
-var main = function (start, end, threeCallback, fiveCallback) {
-
-    for (i = start; i <= end; i++) {
-        arr.push(i);
+}
+y(x);
+*/
+/*
+let calc = function (num1, num2, calcType) {
+    if (calcType === "add") {
+        return num1 + num2;
+    } else if (calcType === "multiply") {
+        return num1 * num2;
 
     }
-    arr.forEach(element => {
-        if (element % 3 === 0 & element % 5 === 0) {
 
-            fiveCallback(element); threeCallback(element);
-
-        } else if (element % 3 === 0) {
-
-            threeCallback(element);
-
-        } else if (element % 5 === 0) {
-
-            fiveCallback(element);
-        };
-
-    })
 };
-main(2, 15, threeCallback, fiveCallback);
+console.log(calc(2, 3, 'add'));
 
+*/
 
+let add = function (a, b) {
+    return a + b;
+};
+let multiply = function (a, b) {
+    return a * b;
+};
+
+let testingfunction = function (k, l) {
+    return "k and l are requesed"
+};
+let calc = function (num1, num2, callback) {
+    return callback(num1, num2);
+};
+console.log(calc(2, 3, add));
