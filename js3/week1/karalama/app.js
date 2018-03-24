@@ -4,26 +4,31 @@
 
 {
     const url = 'https://api.github.com/orgs/HackYourFuture/repos?per_page=100'
-    function fetchJSON(url, cb) {
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.responseType = 'json';
-        xhr.onreadystatechange = () => {
-            // console.log(xhr.readyState);
-            if (xhr.readyState === 4) {
-                if (xhr.status < 400) {
-                    console.log(xhr.response);
-                    cb(null, xhr.response);
-                } else {
-                    cb(new Error(xhr.statusText));
-                    //console.error(xhr.statusText);
-                }
 
-            }
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = function fetchJason() {
+        const repos = JSON.parse(xhr.responseText);
+        console.log(repos);
+        for (let i in repos) {
+            const repoUrl = repos[i].name + "_url: " + 'https://api.github.com/repos/HackYourFuture/' + repos[i].name;
+            console.log(repoUrl);
+
+
+
         };
-        xhr.send();
-    }
+
+    };
+
+    xhr.send();
+
+    // const sxhr = new XMLHttpRequest();
+
+    // sxhr.open('GET', surl);
+
+
+
 
 
 

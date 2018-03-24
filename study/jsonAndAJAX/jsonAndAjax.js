@@ -30,8 +30,9 @@ root.appendChild(div);
 const button = document.createElement('button');
 button.setAttribute("id", "btn")
 root.appendChild(button);
-button.setAttribute("value", "jhjdhjdh")
+button.setAttribute("value", "jhjdhjdh");
 const btn = document.getElementById('btn');
+
 btn.addEventListener("click", function () {
     const ourRequest = new XMLHttpRequest();
     const url = "https://learnwebcode.github.io/json-example/animals-" + pageCounter + ".json";
@@ -40,16 +41,20 @@ btn.addEventListener("click", function () {
         //console.log(ourRequest.responseText) //shows what i requested from site
         //var ourData = ourRequest.responseText;// if you do just like this,
         //our page will know it as a giant text, so you have tell it it is JSON.
+
         var ourData = JSON.parse(ourRequest.responseText);
+
+
         console.log(ourData[0]);
         renderHtml(ourData);
     };
     ourRequest.send();
-    pageCounter++;
-    if (pageCounter > 3) {
-        btn.classList.add("hide-me")
 
-    }
+    pageCounter++;
+    // if (pageCounter > 3) {
+    //     btn.classList.add("hide-me")
+
+    // }
 
 });
 function renderHtml(data) {
