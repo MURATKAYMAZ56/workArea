@@ -124,7 +124,7 @@ function onSelectChanged(event) {
             contributorsHtml += "<tr>"
                 + "<td><img src= '" + contributor.avatar + "'/></td>"
                 + "<td>" + contributor.name + "</td>"
-                + "td" + contributor.contributions + "</td>"
+                + "<td>" + contributor.contributions + "</td>"
                 + "</tr>";
 
         });
