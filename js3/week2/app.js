@@ -47,7 +47,16 @@ function getRepos() {
 
 
     function renderData(data) {
-        console.log(data);
+        const repositories = response.map((repo) => {
+            return {
+                name: repo.name,
+                description: repo.description,
+                forks: repo.forks,
+                updated_at: repo.updated_at,
+                contributors_url: repo.contributors_url
+            };
+        });
+
 
 
     }
@@ -57,15 +66,6 @@ function getRepos() {
     }
 
 
-    const repositories = response.map((repo) => {
-        return {
-            name: repo.name,
-            description: repo.description,
-            forks: repo.forks,
-            updated_at: repo.updated_at,
-            contributors_url: repo.contributors_url
-        };
-    });
 
     const root = document.getElementById('root');
 
@@ -87,9 +87,9 @@ function getRepos() {
     const main = append('main', root);
     main.innerHTML = "<div id='left-sidebar'></div><div id='right-sidebar'></div>";
 
-});
-
 }
+
+
 
 function append(tagName, parent) {
     const elem = document.createElement(tagName);
@@ -126,21 +126,21 @@ function onSelectChanged(event) {
     const rightSidebar = document.getElementById("right-sidebar");
     rightSidebar.innerHTML = "Loading...";
 
-    fetchJSON(repo.contributors_url, (err, response) => {
-
+    fetchJSON(repo.contributors_url)
+    return new Promise((resolve, reject) => {
         if (err) {
-            console.log(err);
-            return;
+
+            reject(new Error())
+
         }
 
         const contributors = response.map((contributor) => {
-            return {
+            resolve({
                 name: contributor.login,
                 avatar: contributor.avatar_url,
                 contributions: contributor.contributions
-            };
+            });
         });
-
         var contributorsHtml = "<table>";
 
         contributors.forEach(contributor => {
@@ -155,8 +155,17 @@ function onSelectChanged(event) {
 
         rightSidebar.innerHTML = contributorsHtml;
 
-    })
+
+    }
+    );
+
+
+
+
+
+
 }
+
 
 
 getRepos();
