@@ -5,7 +5,7 @@ fruits.forEach(function (value) {
 });
 
 //// now lets do it with CALLBACK
-console.log("now I do the same wtih the callback");
+console.log("now I do the same with the callback");
 function callback(value) {
     console.log(value);
 }
