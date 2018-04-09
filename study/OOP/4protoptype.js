@@ -1,23 +1,22 @@
-
 function Month(name, days) {
     this.name = name;
     this.days = days;
 }
 
-this.hasDays = function (days) {
+Month.prototype.hasDays = function (days) {
     return this.days === days;
 };
 
-this.isLongMonth = function () {
+Month.prototype.isLongMonth = function () {
     return this.hasDays(31);
-
 };
-this.toString = function () {
-    return `${this.name} has ${this.days} days`;
 
+Month.prototype.toString = function () {
+    return `${this.name} has ${this.days} days.`;
 };
-this.toConsole = function () {
-    return console.log(this.toString());
+
+Month.prototype.toConsole = function () {
+    console.log(this.toString());
 };
 
 const months = [
@@ -34,8 +33,7 @@ const months = [
     new Month('November', 30),
     new Month('December', 31)
 ];
+
 months
     .filter(month => month.isLongMonth())
-    .forEach(month => month.toString());
-
-
+    .forEach(month => month.toConsole());
