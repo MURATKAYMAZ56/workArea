@@ -1,6 +1,6 @@
 function Month(name, days) {
     this.name = name;
-    this.days = days
+    this.days = days;
 }
 const months = [
     new Month('january', 31),
