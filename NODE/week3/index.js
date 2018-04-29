@@ -13,5 +13,5 @@ app.post('/cats', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('listening');
+    console.info('listening on local host http//localhost:3000');
 });
