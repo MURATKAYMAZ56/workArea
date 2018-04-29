@@ -42,6 +42,3 @@ if (args.length < 3) { //  node index.js
 
 
 };
-
-
-
