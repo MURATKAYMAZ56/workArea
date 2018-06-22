@@ -1,0 +1,14 @@
+const inputvalue= this .state.inputvalue;
+const secondvalue= this .state.secondvalue;
+const thirdvalue= this .state.thirdvalue
+
+const {inputvalue,secondvalue, thirdvalue}=this.state
+//this are the same above
+//////////////////////////////////////////////
+
+
+
+
+
+in app.js 3 times we write this.state.inputvalue So instead we can 
+const {inputvalue}=this.state
