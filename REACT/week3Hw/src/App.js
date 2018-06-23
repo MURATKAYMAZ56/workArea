@@ -22,6 +22,16 @@ class App extends Component {
 
     this.setState({ todos });
   };
+  addNewTodo = add => {
+    const newTodo = {
+      description: add.description,
+      deadline: add.deadline
+    };
+    this.setState({
+      todos: this.state.todos.concat([newTodo])
+    });
+    //const newId = uuid();
+  };
 
   render() {
     const todoItems = this.state.todos.map(todo => (
@@ -34,7 +44,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <AddTodo />
+        <AddTodo addNewTodo={this.addNewTodo} />
         <ul>{todoItems.length > 0 ? todoItems : <p>No items</p>}</ul>
       </div>
     );
