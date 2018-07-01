@@ -1,0 +1,13 @@
+1- create-react-app myapp
+2- npm run eject
+3- npm install mobx mobx-react
+4- npm install babel-plugin-transform-decorators-legacy
+5- copy "transform-decorators-legacy" to your babel inside package.json
+"babel": {
+   "plugins": [
+     "transform-decorators-legacy"
+   ],
+   "presets": [
+     "react-app"
+   ]
+ }
