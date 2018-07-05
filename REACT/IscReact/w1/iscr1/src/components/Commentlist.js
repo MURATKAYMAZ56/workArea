@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Commentlist.css";
+import CommentItem from "./CommentItem";
 class Commentlist extends Component {
   render() {
     const comments = [
@@ -8,11 +9,7 @@ class Commentlist extends Component {
       { user: "Benjamin", comment: "Cok Awesome" }
     ];
     const commentsElemets = comments.map((element, index) => (
-      <div key={index} className="comment">
-        <span>
-          <strong>{element.user} said:</strong> {element.comment}
-        </span>
-      </div>
+      <CommentItem user={element.user} comment={element.comment} />
     ));
     return <div>{commentsElemets}</div>;
   }
