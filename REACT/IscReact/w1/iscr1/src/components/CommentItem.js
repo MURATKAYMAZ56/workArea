@@ -15,4 +15,3 @@ class CommentItem extends Component {
 }
 
 export default CommentItem;
-==
