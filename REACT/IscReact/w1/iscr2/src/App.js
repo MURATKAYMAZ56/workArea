@@ -1,20 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+import "./App.css";
+import TopHeader from "./components/TopHeader";
+import PostBody from "./components/PostBody";
+import Commentlist from "./components/Commentlist";
+import comments from "./data/comments";
 
 class App extends Component {
+  state = {
+    comments: []
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <TopHeader />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <PostBody />
+
+        <hr />
+        <Commentlist comments={this.state.comments} />
       </div>
     );
+  }
+  componentDidMount() {
+    this.setState({
+      comments: comments
+    });
   }
 }
 
