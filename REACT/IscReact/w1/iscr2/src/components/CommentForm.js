@@ -10,9 +10,7 @@ export default class CommentForm extends Component {
     newState[field] = value;
     this.setState(newState);
   }
-  handleSubmit = () => {
-    console.log("submit clicked");
-  };
+
   render() {
     return (
       <div>
