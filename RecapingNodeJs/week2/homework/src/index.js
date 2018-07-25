@@ -1,58 +1,47 @@
-'use strict';
-const program = require('commander');
-const handler = require('./handler.js');
+"use strict";
+const { readFile, writeFile } = require("fs");
+const { promisify } = require("util");
+const readFileWithPromise = promisify(readFile);
+const writeFileWithPromise = promisify(writeFile);
 
-var todos = handler.read();
+async function main() {
+  const [, , cmd, ...args] = process.argv;
+  //console.log(cmd);
+  const TODO_FILE = "todo.json";
+  //console.log(TODO_FILE);
 
-program
-    .version('0.1.0');
+  switch (cmd) {
+      case "add":
+          {
+              const data = await readFileWithPromise(TODO_FILE, "utf8").catch(() => {
+                  "[]";
+              });
+              const todos = JSON.parse(data);
+              const newTodo = args.join("");
+              todos.push(newTodo);
+              await writeFileWithPromise(TODO_FILE, JSON.stringify(todos));
 
-program
-    .command('help')
-    .description('usage of this cmd line program')
-    .action(function (param) {
-        program.help();
-    });
+              break;
+          }
+      case "list": {
+          const data = await readFileWithPromise(TODO_FILE, "utf8").catch(() => "[]");
+          const todos = JSON.parse(data);
+          console.log(todos);
+      
+          break;
+      }
 
-program
-    .command('add [todo]')
-    .description('add to-do')
-    .action(function (param) {
-        handler.add(param);
-        console.log('\"' + param + '\" saved');
-    });
+    case "remove":
+      break;
 
-program
-    .command('remove [index]')
-    .description('remove to-do by index')
-    .action(function (param) {
-        handler.remove(param);
-        console.log("removed by index: " + param);
-    });
+    case "reset":
+          break;
 
-program
-    .command('list')
-    .description('list all to-dos')
-    .action(function () {
-        console.log(handler.read());
-    });
+      case "help":
 
-program
-    .command('reset')
-    .description('remove all to-dos')
-    .action(function () {
-        handler.reset();
-        console.log('removed all to-dos');
-    });
-
-program
-    .command('update [index] [to-do]')
-    .description('update to-do')
-    .action(function (index, param) {
-        handler.update(index, param);
-        console.log(index + '. to-do updated as "' + param + '"');
-    });
-
-program.parse(process.argv);
-
-if (!program.args.length) program.help();
+    default:
+      console.log("some help");
+      break;
+  }
+}
+main();
