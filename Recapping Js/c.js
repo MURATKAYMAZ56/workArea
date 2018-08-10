@@ -1,15 +1,35 @@
-const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];
-const squareList = arr => {
-  "use strict";
-  // change code below this line
+function Tree(name) {
+  this.name = name;
+}
 
-  const squaredIntegers = arr
-    .filter(num => num > 0 && num % parseInt(num) === 0)
-    .map(num => Math.pow(num, 2));
+var theTree = new Tree('Redwood');
+console.log('theTree.constructor is ' + theTree.constructor);
 
-  // change code above this line
-  return squaredIntegers;
-};
-// test your code
-const squaredIntegers = squareList(realNumberArray);
-console.log(squaredIntegers);
+
+function Type() {}
+
+var types = [
+  new Array(), [],
+  new Boolean(),
+  true, // remains unchanged
+  new Date(),
+  new Error(),
+  new Function(),
+  function () {},
+  Math,
+  new Number(),
+  1, // remains unchanged
+  new Object(),
+  {},
+  new RegExp(),
+  /(?:)/,
+  new String(),
+  'test' // remains unchanged
+];
+
+for (var i = 0; i < types.length; i++) {
+  types[i].constructor = Type;
+  types[i] = [types[i].constructor, types[i] instanceof Type, types[i].toString()];
+}
+
+console.log(types.join('\n'));
