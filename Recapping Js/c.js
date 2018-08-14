@@ -1,35 +1,13 @@
-function Tree(name) {
-  this.name = name;
-}
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
 
-var theTree = new Tree('Redwood');
-console.log('theTree.constructor is ' + theTree.constructor);
+// change code below this line
+foods.bananas = 13;
+foods.grapes = 35;
+foods.strawberries = 27;
+// change code above this line
 
-
-function Type() {}
-
-var types = [
-  new Array(), [],
-  new Boolean(),
-  true, // remains unchanged
-  new Date(),
-  new Error(),
-  new Function(),
-  function () {},
-  Math,
-  new Number(),
-  1, // remains unchanged
-  new Object(),
-  {},
-  new RegExp(),
-  /(?:)/,
-  new String(),
-  'test' // remains unchanged
-];
-
-for (var i = 0; i < types.length; i++) {
-  types[i].constructor = Type;
-  types[i] = [types[i].constructor, types[i] instanceof Type, types[i].toString()];
-}
-
-console.log(types.join('\n'));
+console.log(foods);
