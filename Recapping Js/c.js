@@ -1,13 +1,35 @@
-let foods = {
-  apples: 25,
-  oranges: 32,
-  plums: 28
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
 };
 
-// change code below this line
-foods.bananas = 13;
-foods.grapes = 35;
-foods.strawberries = 27;
-// change code above this line
+function countOnline(obj) {
+  // change code below this line
+  let count = 0;
+  for (let i in users) {
+    console.log(i)
 
-console.log(foods);
+    if (i.online == true) {
+      console.log('hopp')
+      count++;
+    }
+    return count;
+  }
+  // change code above this line
+}
+
+console.log(countOnline(users));
