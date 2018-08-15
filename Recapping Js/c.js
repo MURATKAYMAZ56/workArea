@@ -20,16 +20,29 @@ let users = {
 function countOnline(obj) {
   // change code below this line
   let count = 0;
-  for (let i in users) {
-    console.log(i)
-
-    if (i.online == true) {
-      console.log('hopp')
+  for (let key in obj) {
+    console.log(typeof (key));
+    if (obj[key].online) {
       count++;
     }
-    return count;
+
   }
+  return count;
   // change code above this line
 }
 
 console.log(countOnline(users));
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // change code below this line
+    console.log(newArr.push([...arr]))
+    // change code above this line
+    num--;
+  }
+  return newArr;
+}
+
+// change code here to test different cases:
+console.log(copyMachine([true, false, true], 2));
