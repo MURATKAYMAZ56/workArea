@@ -1,48 +1,29 @@
-let users = {
-  Alan: {
-    age: 27,
-    online: false
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: false
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  let check = 0;
+  let splitSentence = str.split(" ");
+  let splittarget = target.split("");
+  console.log(splittarget);
+  let lastWordIndex = splitSentence.length - 1;
+  let lastLettersOfLastWord = splitSentence[lastWordIndex].split("");
+  console.log(lastLettersOfLastWord);
+  for (let i in splittarget) {
 
-function countOnline(obj) {
-  // change code below this line
-  let count = 0;
-  for (let key in obj) {
-    console.log(typeof (key));
-    if (obj[key].online) {
-      count++;
+    if (splittarget[splittarget.length - 1] === lastLettersOfLastWord[lastLettersOfLastWord.length - 1]) {
+      check++;
+
+
     }
 
   }
-  return count;
-  // change code above this line
-}
-
-console.log(countOnline(users));
-
-function copyMachine(arr, num) {
-  let newArr = [];
-  while (num >= 1) {
-    // change code below this line
-    console.log(newArr.push([...arr]))
-    // change code above this line
-    num--;
+  console.log(check);
+  if (check === splittarget.length) {
+    console.log("splottargerlength" + splittarget.length);
+    return true;
   }
-  return newArr;
+  return false;
+
 }
 
-// change code here to test different cases:
-console.log(copyMachine([true, false, true], 2));
+console.log(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"));
