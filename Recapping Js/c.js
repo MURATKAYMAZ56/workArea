@@ -1,29 +1,11 @@
-function confirmEnding(str, target) {
-  // "Never give up and good luck will find you."
-  // -- Falcor
-  let check = 0;
-  let splitSentence = str.split(" ");
-  let splittarget = target.split("");
-  console.log(splittarget);
-  let lastWordIndex = splitSentence.length - 1;
-  let lastLettersOfLastWord = splitSentence[lastWordIndex].split("");
-  console.log(lastLettersOfLastWord);
-  for (let i in splittarget) {
-
-    if (splittarget[splittarget.length - 1] === lastLettersOfLastWord[lastLettersOfLastWord.length - 1]) {
-      check++;
-
-
-    }
-
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  let rep = " ";
+  for (i = 1; i <= num; i++) {
+    rep = rep + str
   }
-  console.log(check);
-  if (check === splittarget.length) {
-    console.log("splottargerlength" + splittarget.length);
-    return true;
-  }
-  return false;
-
+  return rep;
 }
 
-console.log(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"));
+console.log(repeatStringNumTimes("abc", 3))
+console.log(typeof (rep))
