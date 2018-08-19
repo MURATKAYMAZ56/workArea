@@ -47,7 +47,7 @@ function main() {
             option.setAttribute("value", JSON.stringify(repo));
             option.innerHTML = repo.name;
         })
-        select.addEventListener("change", onchange);
+        select.addEventListener("change", onChange);
         const main = createAndAppend("main", root);
         main.innerHTML = "<div id= 'leftBar'></div><div id='rightbar'></div>";
 
@@ -81,6 +81,15 @@ function onChange(event) {
         "</table>";
     const leftSideBar = getElementById("leftBar");
     leftSideBar.innerHTML = reposDetails;
+    const rightSideBar = getElementById("rightBar");
+    rightSideBar.innerHTML = "loading...";
+    fetchJSON(repo.contributors_url, (error, data) => {
+        if (error) {
+            console.log(console.error());
+            return;
+        }
+
+    })
 
 
 
@@ -122,24 +131,6 @@ main();
 
 
 
-
-
-// function fetchJSOn(URL, callback) {
-//     const http = new XMLHttpRequest();
-//     http.open("GET", URL, true);
-//     http.responseType = 'json';
-
-//     http.onreadystatechange = () => {
-//         if (http.readyState === 4 && http.status === 200) {
-//             console.log('response from the server: ' + http.response);
-//         }
-//     }
-
-//     http.send;
-// }
-// fetchJSOn(URL, (err) => {
-//     console.log(err)
-// })
 
 
 
