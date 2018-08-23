@@ -1,8 +1,10 @@
-(function () {
-    var names = ["Ben", "Jafar", "Matt", "Priya", "Brian"];
+function Dog() {
+    this.name = "Rupert";
+    this.color = "brown";
+    this.numLegs = 4;
+}
+// Add your code below this line
 
-    names.forEach((name) => {
-
-        console.log(name);
-    });
-})();
+let newDog = new Dog();
+newDog.name = 'hound';
+console.log(newDog)

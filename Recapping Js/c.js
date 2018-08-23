@@ -1,11 +1,17 @@
-function repeatStringNumTimes(str, num) {
-  // repeat after me
-  let rep = " ";
-  for (i = 1; i <= num; i++) {
-    rep = rep + str
-  }
-  return rep;
+const Bird = function (age, birth) {
+  this.age = age;
+  this.birth = birth;
 }
 
-console.log(repeatStringNumTimes("abc", 3))
-console.log(typeof (rep))
+
+
+Bird.prototype.numLegs = 2;
+Bird.prototype.eat = function () {
+  console.log("nom nom nom");
+}
+
+Bird.prototype.describe = function () {
+  console.log("My name is " + this.name);
+}
+
+console.log(Bird.prototype);
