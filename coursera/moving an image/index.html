@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Moving an Image</title>
+    <script>
+        let the_timer;
+        let x_position = 0;
+        let the_image;
+
+        function set_timer() {
+            //console.log("called");
+            the_image = document.getElementById("mrt_photo");
+            x_position = x_position + 1;
+            the_image.style.left = x_position;
+            the_timer = setTimeout(set_timer, 50);
+
+
+
+        }
+    </script>
+</head>
+
+<body onload="set_timer()">
+    <img src="murat foto.JPG" id="mrt_photo" style="position:absolute;right:0">
+    <button onclick="clearTimeout(set_timer)">Stop!</button>
+
+</body>
+
+</html>

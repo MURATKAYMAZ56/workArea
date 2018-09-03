@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <script>
+        let wait_time;
+
+        function set_things_up() {
+            wait_time = prompt("how long do you want to sleep");
+            setTimeout(show_wakeUp_message, wait_time);
+
+        }
+
+        function show_wakeUp_message() {
+            alert("WAKE Up!!!!")
+        }
+    </script>
+
+</head>
+
+<body onload="set_things_up()">
+    <h1> Alarm clock example</h1>
+
+
+
+</body>
+
+</html>
