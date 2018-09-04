@@ -11,3 +11,7 @@ console.log(tags)
 console.log(tagsArray)
 console.log('splited string= ' + tagsArray);
 console.log('jdhdh= ' + tags)
+
+const sentence = "I am going to get shower";
+const splitedSentence = sentence.split("");
+console.log(splitedSentence);
