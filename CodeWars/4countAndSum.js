@@ -6,8 +6,6 @@ the second element is sum of negative numbers.
 
 If the input array is empty or null, return an empty array: */
 
-
-
 function countPositivesSumNegatives(input) {
     const arr = [];
     let count = 0;
@@ -21,15 +19,11 @@ function countPositivesSumNegatives(input) {
             }
 
         });
-        const sumNeg = input.filter(elem => elem < 0).reduce((a, b) => a + b);
-
-
+        const sumNeg = input.filter(elem => elem < 0).reduce((a, b) => a + b, 0);
         arr.push(count);
         arr.push(sumNeg);
-
-
         return arr;
 
     }
 }
-console.log(countPositivesSumNegatives());
+console.log(countPositivesSumNegatives([]));

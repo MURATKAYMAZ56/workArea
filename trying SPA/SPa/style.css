@@ -1,0 +1,22 @@
+#main {
+    margin: 0 auto;
+    width: 400px;
+}
+
+header {
+    font-weight: bold;
+    font-size: 34px;
+    margin: 20px;
+}
+
+select {
+    width: 100%;
+    margin: 10px 0 10px 0;
+    height: 40px;
+}
+
+#container div {
+    background: rgb(235, 235, 233);
+    margin-bottom: 10px;
+    width: 100%;
+}
