@@ -1,15 +1,15 @@
 const NobelUrl = "http://api.nobelprize.org/v1/laureate.json?";
 const options = [{
-        value: "femaleLaurates",
-        text: "All Female Laurates"
+        value: "femaleLaureates",
+        text: "All Female Laureates"
     },
     {
         value: "allDutch",
-        text: "All Dutch Laurates"
+        text: "All Dutch Laureates"
     },
     {
-        value: "physicsLaurates",
-        text: "All Physics Laurates"
+        value: "physicsLaureates",
+        text: "All Physics Laureates"
     }
 
 ];
@@ -50,23 +50,23 @@ function onSelectChange(event, data) {
         //females
         console.log(data)
         for (let i in data) {
-            const laurate = data[i];
+            const laureate = data[i];
 
-            if (laurate.gender === "female") {
+            if (laureate.gender === "female") {
 
                 const div = createAndAppend(container, "div");
 
                 let prizeHTML = "";
-                laurate.prizes.forEach(prize => {
+                laureate.prizes.forEach(prize => {
                     prizeHTML += `<li>${prize.year},${prize.category}<br>${prize.motivation}</li>`
 
                 })
 
                 div.innerHTML = `<table>
-                <tr> <td>Name: </td><td>${laurate.firstname + " " + laurate.surname}</td> </tr>
-                <tr> <td> Born: </td><td>${laurate.born}</td> </tr>
-                <tr> <td> Died: </td><td>${laurate.died}</td> </tr>
-                <tr><td> Prizes:</td><td><ul>${prizeHTML}</ul></td></tr>
+                <tr> <td><b>Name: </b></td><td>${laureate.firstname + " " + laureate.surname}</td> </tr>
+                <tr> <td> <b>Born:</b> </td><td>${laureate.born}</td> </tr>
+                <tr> <td> <b>Died: </b></td><td>${laureate.died}</td> </tr>
+                <tr><td><b> Prizes:</b></td><td><ul>${prizeHTML}</ul></td></tr>
                                 </table>`
 
             }
@@ -78,6 +78,30 @@ function onSelectChange(event, data) {
 
     } else if (target === options[1].value) {
         //alldutchs
+        for (let i in data) {
+            const laureate = data[i];
+
+            if (laureate.bornCountryCode === "NL") {
+
+                const div = createAndAppend(container, "div");
+
+                let prizeHTML = "";
+                laureate.prizes.forEach(prize => {
+                    prizeHTML += `<li>${prize.year},${prize.category}<br>${prize.motivation}</li>`
+
+                })
+
+                div.innerHTML = `<table>
+                <tr> <td><b>Name: </b></td><td>${laureate.firstname + " " + laureate.surname}</td> </tr>
+                <tr> <td> <b>Born:</b> </td><td>${laureate.born}</td> </tr>
+                <tr> <td> <b>Died: </b></td><td>${laureate.died}</td> </tr>
+                <tr><td><b> Prizes:</b></td><td><ul>${prizeHTML}</ul></td></tr>
+                                </table>`
+
+            }
+
+        }
+
 
 
 

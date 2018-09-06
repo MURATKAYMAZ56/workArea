@@ -16,7 +16,7 @@ select {
 }
 
 #container div {
-    background: rgb(235, 235, 233);
+    background: white;
     margin-bottom: 10px;
     width: 100%;
 }
