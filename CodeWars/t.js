@@ -1,35 +1,7 @@
-/*Given an array of integers.
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const tr = arr.reduce((a, b) => a + b, 0);
 
-Return an array, where the 
-first element is the count of positives numbers and 
-the second element is sum of negative numbers.
-
-If the input array is empty or null, return an empty array: */
-
-
-
-function countPositivesSumNegatives(input) {
-    const arr = [];
-    let count = 0;
-    if (input == null || input.length === 0) {
-        return arr;
-
-    } else if (input) {
-        const posNum = input.forEach(elem => {
-            if (elem > 0) {
-                count++;
-            }
-
-        });
-        const sumNeg = input.filter(elem => elem < 0).reduce((a, b) => a + b);
-
-
-        arr.push(count);
-        arr.push(sumNeg);
-
-
-        return arr;
-
-    }
+const sum;
+for (let i in arr) {
+    sum = arr[i] + arr[i + 1] + arr[-i + 2];
 }
-console.log(countPositivesSumNegatives());
