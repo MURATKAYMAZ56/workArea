@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { observer } from "mobx-react";
 import logo from "./logo.svg";
 import "./App.css";
 import Checkbox from "./components/Checkbox";
 import todos from "./components/todos";
 import AddTodo from "./components/AddTodo";
-
+@observer
 class App extends Component {
   state = {
     todos
@@ -14,7 +15,9 @@ class App extends Component {
       todo => String(event.target.id) !== String(todo.id)
     );
     console.log(todos);
-    this.setState({ todos });
+    this.setState({
+      todos
+    });
   };
   onChange = event => {
     const id = event.target.id;
@@ -33,8 +36,15 @@ class App extends Component {
     const curTodos = this.state.todos || [];
     const id = curTodos.length + 1;
 
-    curTodos.push({ id, description: des, deadline: deadline, done: false });
-    this.setState({ todos: curTodos });
+    curTodos.push({
+      id,
+      description: des,
+      deadline: deadline,
+      done: false
+    });
+    this.setState({
+      todos: curTodos
+    });
   };
 
   render() {
@@ -45,7 +55,7 @@ class App extends Component {
           todo={todo}
           onChange={this.onChange}
           removeTodo={this.removeTodo}
-        />
+        />{" "}
       </div>
     ));
 
@@ -53,12 +63,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title"> Welcome to React </h1>
-        </header>
+          <h1 className="App-title"> Welcome to React </h1>{" "}
+        </header>{" "}
         <ul> {todoItems.length > 0 ? todoItems : <p> No Items!! </p>}</ul>
         <div>
-          <AddTodo addTodoHandler={this.addTodoHandler} />
-        </div>
+          <AddTodo addTodoHandler={this.addTodoHandler} />{" "}
+        </div>{" "}
       </div>
     );
   }

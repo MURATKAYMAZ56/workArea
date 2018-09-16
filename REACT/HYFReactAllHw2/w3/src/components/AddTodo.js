@@ -12,9 +12,7 @@ class AddTodo extends React.Component {
 
   onChange = evt => {
     evt.target.name === "description"
-      ? this.setState({
-          description: evt.target.value
-        })
+      ? this.setState({ description: evt.target.value })
       : this.setState({ deadline: evt.target.value });
   };
   render() {
