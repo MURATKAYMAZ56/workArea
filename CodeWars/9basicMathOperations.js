@@ -25,16 +25,7 @@ function basicOp(operation, value1, value2) {
 }
 
 ////////////smart solution
-function basicOp(o, a, b) {
+function basicOpx(o, a, b) {
     return eval(a + o + b);
 }
-/////////////Another
-function basicOp(operation, value1, value2) {
-    var cases = {
-        '+': value1 + value2,
-        '-': value1 - value2,
-        '*': value1 * value2,
-        '/': value1 / value2
-    };
-    return cases[operation]
-}
+console.log(basicOpx('/', 8, 2))
