@@ -31,3 +31,46 @@ function count(string) {
     });
     return obj;
 }
+/////////////////////////////////////////////////
+function count(string) {
+    return string.split('').reduce(function (a, b) {
+        return a[b] = a[b] ? ++a[b] : 1, a;
+    }, {});
+}
+//////////////////////////////////////////////////
+function count(string) {
+    var result = {};
+
+    for (let i = 0; i < string.length; i++) {
+        if (result.hasOwnProperty(string[i])) {
+            result[string[i]] += 1;
+        } else {
+            result[string[i]] = 1;
+        }
+    }
+
+    return result;
+}
+/////////////////////////////////////////////////
+function count(string) {
+    var newString = string.toLowerCase();
+    var characterCount = {};
+    var alphabets = "abcdefghijklmnopqrstuvwxyz";
+
+    function countPos(char) {
+        var count = 0;
+        var pos = newString.indexOf(char);
+        while (pos !== -1) {
+            count++;
+            pos = newString.indexOf(char, pos + 1);
+        }
+        return count;
+    }
+    for (var i = 0; i < alphabets.length; i++) {
+        var value = countPos(alphabets.charAt(i));
+        if (value) {
+            characterCount[alphabets.charAt(i)] = value;
+        }
+    }
+    return characterCount;
+}
