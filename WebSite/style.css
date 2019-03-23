@@ -1,0 +1,43 @@
+@media screen and (max-width: 640px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 50px 350px 50px;
+        grid-gap: 5px;
+        grid-template-areas:
+            ". h h h h h h h h h h ."
+            "m m c c c c c c c c c c"
+            ". f f f f f f f f f f .";
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 350px 50px;
+    grid-gap: 5px;
+    grid-template-areas:
+        ". h h h h h h h h h h ."
+        "m m c c c c c c c c c c"
+        ". f f f f f f f f f f .";
+}
+
+.header {
+    background-color: rgb(0, 255, 191);
+    grid-area: h;
+}
+
+.menu {
+    background-color: rgb(0, 255, 255);
+    grid-area: m;
+}
+
+.content {
+    background-color: rgb(208, 255, 0);
+    grid-area: c;
+}
+
+.footer {
+    background-color: pink;
+    grid-area: f;
+}
